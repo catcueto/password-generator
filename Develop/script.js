@@ -60,7 +60,7 @@ function generatePassword() {
     charSet += "0123456789";
     console.log("Numeric value(s) has been added");
   }
-  if (upperCase) {
+  if (symbols) {
     charSet += "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     console.log("Special character(s) has been added");
   }
