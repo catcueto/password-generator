@@ -25,7 +25,7 @@ generateBtn.addEventListener("click", writePassword);
 // }
 
 // MY CODE
-// This function defines generate Password
+// This function definepus generate Password
 function generatePassword() {
   console.log("Hola, bola! This is working");
 
@@ -34,20 +34,69 @@ function generatePassword() {
   var passwordLength = window.prompt(
     "Please enter the number of characters you would like your password to have. It must be between 8 and 128 characters"
   );
-  // b) Variabels should include lowercase, uppercase, numbers, and special characters
+  if (passwordLength < 8 || passwordLength > 128) {
+    return "Invalid password length. Click the burgundy button below to restart the generator";
+  } else {
+    console.log("Valid password length selected");
+  }
 
-  // STEP 2: VALIDATE THE INPUT
+  // b) PROMPTS TO CONFIRM INCLUSION (OR NOT) OF LOWERCASE, UPPERCASE, NUMERIC, AND SPECIAL CHARs
+  // Using Window confirm method to display an OK button + Cancel button
+  var lowerCase = confirm(
+    "Would you like to include LOWERCASE letters in your password?"
+  );
+  var upperCase = confirm(
+    "Would you like to include UPPERCASE letters in your password?"
+  );
+  var numbers = confirm(
+    "Would you like to include NUMERIC characters in your password?"
+  );
+  var symbols = confirm(
+    "Would you like to include SPECIAL characters in your password?"
+  );
 
-  // define all possible variables for characters
-  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numbers = "0123456789";
-  var symbols = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+  // c) Variabels should include lowercase, uppercase, numbers, and special characters
 
   // create empty strings
+  var charSet = "";
+  // If user selects [CANCEL] for all the prompts...
+  if (!lowerCase && !upperCase && !numbers && !symbols) {
+    return "You didn't select the required character criteria. Try again! :)";
+  }
+
+  // THIS IS WHERE WE DEFINE OUR VARIABLES
+  // If our lowerCase variable is selected [OK], then console.log...
+  if (lowerCase) {
+    charSet += "abcdefghijklmnopqrstuvwxyz";
+    console.log("Lower-case character(s) has been added");
+  }
+  if (upperCase) {
+    charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    console.log("Upper-case character has been added");
+  }
+  if (numbers) {
+    charSet += "0123456789";
+    console.log("Numeric value(s) has been added");
+  }
+  if (upperCase) {
+    charSet += "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+    console.log("Special character(s) has been added");
+  }
   var newPassword = "";
-  var chars = "";
 }
+
+// STEP 2: VALIDATE THE INPUT
+console.log(charSet);
+//returns the length of variable charSet
+var charLength = charSet.length;
+
+// STEP 3
+// define all possible variables for characters
+// var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+// var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// var numbers = "0123456789";
+// var symbols = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+
 // Window pprompt - returns input value if the user click "OK", otherwise null
 
 //   var paswordLength = function (min, max) {
