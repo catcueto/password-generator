@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The password generator was created using the Web API (window.prompt) land JavScript methos like confirm(), Math.floor, and Math.random.
+The password generator was created using the Web API (window.prompt) and JavScript methods like confirm(), Math.floor, and Math.random.
 
 Once the user clicks the 'Generate Password' button, he will immediately see a window prompt that asks the user to enter the desired number of characters for the password. Length of password must be between 8 and 128 characters; otherwise, user will get a message on the screen that says "Invalid password length. Try again".
 
